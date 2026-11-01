@@ -1,0 +1,38 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* 섹션 진입 시 페이드인 */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* 현재 보고 있는 섹션의 네비게이션 링크 강조 */
+.nav-link.active {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+/* 스크롤 시 고정 헤더에 가려지지 않도록 앵커 위치 보정 */
+section[id] {
+  scroll-margin-top: 4rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
